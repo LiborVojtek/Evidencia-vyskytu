@@ -1,20 +1,25 @@
 package sk.upjs.ics.evidenciavyskytu;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Vyskyt {
-    private final int id;
+    private int id;
     private String meno;
     private String priezvisko;
     private LocalDateTime kedy;
     private String akcia;
 
-    public Vyskyt(int id) {
-        this.id = id;
+    public Vyskyt() {
+        
     }
 
     public int getId() {
         return id;
+    }
+    
+    public void setId(int id){
+        this.id = id;
     }
     
     public String getMeno() {
@@ -51,7 +56,8 @@ public class Vyskyt {
 
     @Override
     public String toString() {
-        return meno + " " + priezvisko + " " + kedy;
+        String stringKedy = kedy.format(DateTimeFormatter.ofPattern("dd.mm.yyyy hh:mm:ss"));
+        return id + ". " + meno + " " + priezvisko + " " + stringKedy;
     }
     
     
