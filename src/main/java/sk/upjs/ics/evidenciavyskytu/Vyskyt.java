@@ -48,6 +48,11 @@ public class Vyskyt {
     public void setAkcia(String akcia) {
         this.akcia = akcia;
     }
+
+    @Override
+    public String toString() {
+        return meno + " " + priezvisko + " " + kedy;
+    }
     
     
 }
